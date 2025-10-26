@@ -1,43 +1,345 @@
-/***************
- * FCumplimiento.css
- * This file contains styles specific to the FCumplimiento component.
- ***************/
-
-/* Example styles for the FCumplimiento component */
-.fcumplimiento-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+:root {
+  --fci-blue: #9ec6e5;
+  --fci-blue-dark: #4b6f88;
+  --fci-border: #2a4456;
+  --fci-text: #0f2432;
 }
 
-.fcumplimiento-header {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
+.fci-container {
+  padding: 16px 20px 28px;
+  color: var(--fci-text);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.fcumplimiento-form {
-    display: flex;
-    flex-direction: column;
+.fci-header {
+  display: grid;
+  grid-template-columns: 120px 1fr 180px;
+  gap: 12px;
+  align-items: start;
 }
 
-.fcumplimiento-input {
-    margin-bottom: 12px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.fci-logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-top: 8px;
 }
 
-.fcumplimiento-button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.fci-header-main h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.5px;
 }
 
-.fcumplimiento-button:hover {
-    background-color: #0056b3;
+.fci-subtext {
+  margin: 4px 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+.fci-header-side {
+  display: grid;
+  gap: 10px;
+}
+
+.fci-box {
+  border: 2px solid var(--fci-border);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 74px;
+}
+
+.fci-box-title {
+  background: var(--fci-blue);
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  padding: 4px 6px;
+  border-bottom: 2px solid var(--fci-border);
+}
+
+.fci-titlebar {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  align-items: start;
+}
+
+.fci-title-center {
+  text-align: center;
+}
+
+.fci-title-center h2 {
+  margin: 4px 0 0;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.fci-format {
+  font-weight: 600;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.fci-meta {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 8px;
+}
+
+.fci-sheet {
+  border: 1px solid var(--fci-border);
+  padding: 8px 10px;
+  text-align: right;
+  font-size: 13px;
+}
+
+.fci-times {
+  display: grid;
+  gap: 6px;
+}
+
+.fci-time-row {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.fci-section {
+  margin-top: 14px;
+  border: 2px solid var(--fci-border);
+}
+
+.fci-section-title {
+  background: var(--fci-blue);
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--fci-border);
+  letter-spacing: 0.3px;
+}
+
+.fci-row {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--fci-border);
+  min-height: 38px;
+}
+
+.fci-row:last-child {
+  border-bottom: none;
+}
+
+.fci-row > label {
+  padding: 8px 10px;
+  border-right: 1px solid var(--fci-border);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.fci-row .fci-input {
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fci-row-2 {
+  grid-template-columns: 260px 1fr 100px 220px;
+}
+
+.fci-row-3 {
+  grid-template-columns: 260px 1fr 160px;
+}
+
+.fci-mini {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  border-left: 1px solid var(--fci-border);
+}
+
+.fci-mini > label {
+  padding: 8px 10px;
+  border-right: 1px solid var(--fci-border);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.fci-mini .fci-input {
+  border: none;
+  padding: 8px 10px;
+}
+
+.fci-input.center {
+  text-align: center;
+}
+
+.fci-table-section {
+  margin-top: 14px;
+  border: 2px solid var(--fci-border);
+}
+
+.fci-table-section .fci-section-title {
+  background: var(--fci-blue);
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--fci-border);
+  letter-spacing: 0.3px;
+}
+
+.fci-table-wrap {
+  overflow-x: auto;
+}
+
+.fci-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Bigger text for headers and cells, allow rows to grow */
+.fci-table th,
+.fci-table td {
+  border: 1px solid var(--fci-border);
+  padding: 10px 12px;         /* was 8px 10px */
+  font-size: 20px;            /* was 14px */
+  line-height: 1.4;
+  height: auto;               /* was 32px; let content define height */
+  min-height: 38px;           /* ensure comfortable minimum row height */
+  word-wrap: break-word;
+}
+
+.fci-table thead th {
+  background: var(--fci-blue);
+  color: #000;
+  font-weight: 700;
+  text-align: left;
+  font-size: 18px;            /* bigger header text */
+}
+
+/* Column widths: make column 2 larger */
+.fci-table col.fci-col-1 { width: 22%; }
+.fci-table col.fci-col-2 { width: 46%; } /* larger second column */
+.fci-table col.fci-col-3 { width: 10%; }
+.fci-table col.fci-col-4 { width: 11%; }
+.fci-table col.fci-col-5 { width: 11%; }
+
+/* Tick columns styling */
+.fci-table td.fci-tick,
+.fci-table th.fci-tick {
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px;
+}
+
+.fci-table td.fci-tick input[type="checkbox"] {
+  width: 80px;
+  height: 80px;
+  transform: translateY(2px);
+}
+
+/* Signatures section */
+.fci-signatures {
+  margin-top: 20px;
+  border: 2px solid var(--fci-border);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.fci-sign-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fci-sign-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.fci-sign-block {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fci-sign-canvas {
+  width: 100%;
+  height: 140px;            /* visual height; actual pixels are scaled via JS for HiDPI */
+  background: #fff;
+  border: 2px solid #222;
+  border-radius: 8px;
+  touch-action: none;       /* prevent scroll while signing */
+  display: block;
+}
+
+.fci-sign-clear {
+  margin-top: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  border: 1px solid #555;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fci-sign-clear:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.fci-sign-line {
+  margin-top: 10px;
+  width: 80%;
+  height: 2px;
+  background: #222;
+}
+
+.fci-sign-caption {
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Larger textarea for Observaciones */
+.fci-signatures .Observaciones {
+  grid-column: 1 / -1; /* span full width of signatures grid */
+}
+
+.Observaciones label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.fci-textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 10px 12px;
+  font-size: 18px;
+  line-height: 1.4;
+  border: 2px solid var(--fci-border);
+  border-radius: 6px;
+  resize: vertical;
+  box-sizing: border-box;
 }

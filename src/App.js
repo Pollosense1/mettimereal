@@ -14,6 +14,11 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [page, setPage] = useState('landing');
 
+  const missingEnv =
+    !process.env.REACT_APP_SUPABASE_URL ||
+    !process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+  // Whitelist: only these emails can see "Historial"
   const ALLOWED_HISTORY_USERS = new Set([
     'fransvetlana@gmail.com',
     'austriafariasc@gmail.com',
@@ -22,28 +27,32 @@ function App() {
   const canSeeHistory = !!user?.email && ALLOWED_HISTORY_USERS.has(user.email.toLowerCase());
 
   useEffect(() => {
-    let mounted = true;
+  let mounted = true;
 
-    (async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!mounted) return;
-      setUser(session?.user ?? null);
-      setLoading(false);
-    })();
+  (async () => {
+    try {
+      // Always start on Login: clear any locally persisted session on first load
+      await supabase.auth.signOut({ scope: 'local' });
+    } catch {}
+    if (!mounted) return;
+    setUser(null);
+    setLoading(false);
+  })();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
+  const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    setUser(session?.user ?? null);
+  });
 
-    return () => {
-      mounted = false;
-      subscription.unsubscribe();
-    };
-  }, []);
+  return () => {
+    mounted = false;
+    subscription.unsubscribe();
+  };
+}, []);
 
   useEffect(() => {
     const clearLocalSessionOnUnload = () => {
       try {
+        // clears stored credentials immediately (no network needed)
         supabase.auth.signOut({ scope: 'local' });
       } catch {}
     };
@@ -72,10 +81,19 @@ function App() {
     return <Login />;
   }
 
+  if (missingEnv) {
+    return (
+      <div style={{ padding: 24 }}>
+        Missing Supabase configuration.
+        Set REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY in Vercel → Settings → Environment Variables, then redeploy.
+      </div>
+    );
+  }
+
   return (
     <div className="landing-page">
       <header className="header">
-        <img src="/METTIME LOGO.png" alt="Logo" className="header-image" />
+        <img src="METTIME LOGO.png" alt="Logo" className="header-image" />
         <div className="header-text">
           <h1>METTIME</h1>
         </div>
