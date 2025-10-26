@@ -15,7 +15,7 @@ function makeQueryBuilder(error) {
     update() { return builder; },
     delete() { return builder; },
 
-    // filters/options
+    // filters/optionsa
     eq() { return builder; },
     neq() { return builder; },
     lt() { return builder; },
