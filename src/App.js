@@ -75,7 +75,7 @@ function App() {
   return (
     <div className="landing-page">
       <header className="header">
-        <img src="METTIME LOGO.png" alt="Logo" className="header-image" />
+        <img src="/METTIME LOGO.png" alt="Logo" className="header-image" />
         <div className="header-text">
           <h1>METTIME</h1>
         </div>
