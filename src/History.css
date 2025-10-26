@@ -1,0 +1,35 @@
+.header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+.history-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.history-item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+}
+
+.history-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.history-date {
+  color: #6c757d;
+  font-size: 0.9em;
+}
+
+.history-description {
+  margin-top: 5px;
+  font-size: 1em;
+}

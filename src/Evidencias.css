@@ -1,0 +1,46 @@
+.header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+.evidencias-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.evidencias-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.evidencias-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.evidencias-item {
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.evidencias-item:last-child {
+  border-bottom: none;
+}
+
+.evidencias-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.evidencias-button:hover {
+  background-color: #0056b3;
+}

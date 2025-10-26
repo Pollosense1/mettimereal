@@ -1,0 +1,43 @@
+/***************
+ * FCumplimiento.css
+ * This file contains styles specific to the FCumplimiento component.
+ ***************/
+
+/* Example styles for the FCumplimiento component */
+.fcumplimiento-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fcumplimiento-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.fcumplimiento-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.fcumplimiento-input {
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.fcumplimiento-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.fcumplimiento-button:hover {
+    background-color: #0056b3;
+}
