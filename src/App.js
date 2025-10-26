@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
+import { supabase, missingEnv } from './supabaseClient';
 import Login from './Login';
 import './App.css';
 import FillableTable from './FillableTable';
@@ -13,10 +13,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [page, setPage] = useState('landing');
-
-  const missingEnv =
-    !process.env.REACT_APP_SUPABASE_URL ||
-    !process.env.REACT_APP_SUPABASE_ANON_KEY;
 
   // Whitelist: only these emails can see "Historial"
   const ALLOWED_HISTORY_USERS = new Set([
@@ -83,9 +79,9 @@ function App() {
 
   if (missingEnv) {
     return (
-      <div style={{ padding: 24 }}>
-        Missing Supabase configuration.
-        Set REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY in Vercel → Settings → Environment Variables, then redeploy.
+      <div style={{ padding: 24, fontFamily: 'system-ui' }}>
+        <h2>Configuration required</h2>
+        <p>Set REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY in Vercel → Project → Settings → Environment Variables (Production and Preview), then redeploy.</p>
       </div>
     );
   }
