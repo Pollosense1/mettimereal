@@ -33,8 +33,8 @@ function App() {
 
   (async () => {
     try {
-      // Always start on Login: clear any locally persisted session on first load
-      await supabase.auth.signOut({ scope: 'local' });
+      // Always force a full sign-out on load (server + local) so reloads start at Login
+      await supabase.auth.signOut({ scope: 'global' });
     } catch {}
     if (!mounted) return;
     setUser(null);
@@ -63,11 +63,15 @@ function App() {
   }, []);
 
   const handleLogout = async () => {
-    try {
-      await supabase.auth.signOut();
-    } catch (error) {
-      console.error('Error logging out:', error);
-    }
+  try {
+    // Full logout: revoke refresh token and clear local session
+    await supabase.auth.signOut({ scope: 'global' });
+  } catch (error) {
+    console.error('Error logging out:', error);
+  } finally {
+    setPage('landing');
+    setUser(null);
+  }
   };
 
   const handleSelect = (selectedPage) => {
