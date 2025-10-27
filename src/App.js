@@ -16,7 +16,9 @@ function App() {
 
   // Only for production build
   const isProd = process.env.NODE_ENV === 'production';
-  const headerStyle = isProd ? { backgroundColor: '#0B5ED7', color: '#ffffff' } : undefined;
+  const headerStyle = isProd
+    ? { backgroundColor: 'rgba(117, 210, 242, 0.9)', color: '#ffffff' }
+    : undefined;
 
   // Whitelist: only these emails can see "Historial"
   const ALLOWED_HISTORY_USERS = new Set([
