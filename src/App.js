@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { supabase, missingEnv } from './supabaseClient';
+import { supabase1, supabase, missingEnv } from './supabaseClient';
 import Login from './Login';
 import './App.css';
 import FillableTable from './FillableTable';
