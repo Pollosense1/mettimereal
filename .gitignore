@@ -1,9 +1,8 @@
-# dependencies
-node_modules/
+# Build output
+/build
 
-# build output
-build/
-dist/
+# Dependencies
+/node_modules
 
 # env and local settings
 .env
