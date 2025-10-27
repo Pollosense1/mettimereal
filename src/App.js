@@ -14,6 +14,10 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [page, setPage] = useState('landing');
 
+  // Only for production build
+  const isProd = process.env.NODE_ENV === 'production';
+  const headerStyle = isProd ? { backgroundColor: '#0B5ED7', color: '#ffffff' } : undefined;
+
   // Whitelist: only these emails can see "Historial"
   const ALLOWED_HISTORY_USERS = new Set([
     'fransvetlana@gmail.com',
@@ -88,7 +92,7 @@ function App() {
 
   return (
     <div className="landing-page">
-      <header className="header">
+      <header className="header" style={headerStyle}>
         <img src="METTIME LOGO.png" alt="Logo" className="header-image" />
         <div className="header-text">
           <h1>METTIME</h1>
