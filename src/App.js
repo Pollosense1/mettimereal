@@ -101,7 +101,7 @@ function App() {
       <header className="header" style={headerStyle}>
         <img src="METTIME LOGO.png" alt="Logo" className="header-image" />
         <div className="header-text">
-          <h1>METTIME</h1>
+          <h1>MET-TIME</h1>
         </div>
         <div className="dropdown">
           <button onClick={() => setMenuOpen(!menuOpen)}>
@@ -123,7 +123,7 @@ function App() {
       </header>
       {page === 'landing' && (
         <div className="landing-body">
-          <h2>METTIME</h2>
+          <h2>MET-TIME</h2>
           <p>Favor de seleccionar que operación desea realizar <br/> seleccionando una opción del menu </p>
         </div>
       )}

@@ -28,7 +28,7 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-card">
-        <img src="METTIME LOGO.png" alt="METTIME logo" />
+        <img src="METTIME LOGO.png" alt="MET-TIME logo" />
         <h2>Iniciar Sesión</h2>
         <form className="login-form" onSubmit={handleLogin}>
           <div className="inputGroup">
